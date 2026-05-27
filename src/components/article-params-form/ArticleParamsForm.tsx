@@ -1,4 +1,3 @@
-// src/components/article-params-form/ArticleParamsForm.tsx
 import { useState, useRef, FormEvent } from 'react';
 import clsx from 'clsx';
 
