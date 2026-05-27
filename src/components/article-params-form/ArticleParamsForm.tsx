@@ -1,3 +1,4 @@
+// src/components/article-params-form/ArticleParamsForm.tsx
 import { useState, useRef, FormEvent } from 'react';
 import clsx from 'clsx';
 
@@ -31,7 +32,7 @@ export const ArticleParamsForm = ({ currentSettings, onApply }: ArticleParamsFor
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [formState, setFormState] = useState<ArticleStateType>(currentSettings);
 
-  const sidebarRef = useRef<HTMLElement>(null);
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
   useOutsideClickClose({
     isOpen,
@@ -64,7 +65,6 @@ export const ArticleParamsForm = ({ currentSettings, onApply }: ArticleParamsFor
           </Text>
           <Separator />
 
-          {/* Шрифт */}
           <Select
             title="Шрифт"
             options={fontFamilyOptions}
@@ -74,7 +74,6 @@ export const ArticleParamsForm = ({ currentSettings, onApply }: ArticleParamsFor
             }
           />
 
-          {/* Размер шрифта */}
           <RadioGroup
             name="fontSize"
             title="Размер шрифта"
@@ -85,7 +84,6 @@ export const ArticleParamsForm = ({ currentSettings, onApply }: ArticleParamsFor
             }
           />
 
-          {/* Цвет текста */}
           <Select
             title="Цвет текста"
             options={fontColors}
@@ -93,7 +91,6 @@ export const ArticleParamsForm = ({ currentSettings, onApply }: ArticleParamsFor
             onChange={(option) => setFormState((prev) => ({ ...prev, fontColor: option }))}
           />
 
-          {/* Цвет фона */}
           <Select
             title="Цвет фона"
             options={backgroundColors}
@@ -103,7 +100,6 @@ export const ArticleParamsForm = ({ currentSettings, onApply }: ArticleParamsFor
             }
           />
 
-          {/* Ширина контента */}
           <RadioGroup
             name="contentWidth"
             title="Ширина контента"
